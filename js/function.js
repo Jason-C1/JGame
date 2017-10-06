@@ -13,3 +13,13 @@
 function crOverlap (c,r) {
 	return (c.x+c.r>=r.x&&c.x-c.r<=r.x+r.w&&c.y+c.r>=r.y&&c.y-c.r<=r.y+r.h)||(c.x+c.r<=r.x&&c.x-c.r>=r.x+r.w&&c.y+c.r<=r.y&&c.y-c.r>=r.y+r.h)
 }
+function drawBall(context,ball){
+	context.beginPath();
+	context.arc(ball.x, ball.y, ball.r, 0, Math.PI * 2, true);
+	context.closePath();
+	context.fillStyle = ball.color;
+	context.fill();
+}
+function draw(context,obj){
+	context.drawImage(obj.img, obj.x, obj.y);
+}
