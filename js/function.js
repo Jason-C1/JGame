@@ -23,3 +23,18 @@ function drawBall(context,ball){
 function draw(context,obj){
 	context.drawImage(obj.img, obj.x, obj.y);
 }
+function loadLevel(imgs, n) {
+	var levels = initlevels();
+    var level = levels[n-1];
+    var blocks = [];
+    var blockimgs = imgs;
+//  log(blocks);
+    for (var i = 0; i < level.length; i++) {
+        var p = level[i];
+        var b = new initBlock(imgs,p);
+//      log(b);
+        blocks.push(b);
+    }
+//  log(blocks);
+    return blocks;
+}

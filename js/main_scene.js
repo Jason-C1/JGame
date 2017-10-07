@@ -4,6 +4,7 @@ function main_scene (imgs) {
 	var context = canvas.getContext('2d');
 	var ball =new initBall();
 	var paddle = new initPaddle(imgs.paddle);
+	var blocks = loadLevel(imgs,2);
 	var fps = Math.floor(1000/60);;
 	this.paused=1;
 	var mousePosition = {
@@ -11,8 +12,14 @@ function main_scene (imgs) {
 		y:450,
 	}
 	//画图像
+//	log(paddle);
+
 	drawBall(context,ball);
 	draw(context,paddle);
+	for (blockKey in blocks) {
+		var block = blocks[blockKey];
+		draw(context,block);
+	}
 	//重画图像
 	var redarw = function() {
 		//球运动
@@ -47,6 +54,10 @@ function main_scene (imgs) {
 		context.clearRect(0,0, canvas.width, canvas.height);
 		drawBall(context,ball);
 		draw(context,paddle);
+		for (blockKey in blocks) {
+		var block = blocks[blockKey];
+		draw(context,block);
+	}
 	}
 	window.addEventListener('keydown', function(event){
 		log('keydown');

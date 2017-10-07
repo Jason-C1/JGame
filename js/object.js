@@ -13,5 +13,29 @@ function initPaddle(img) {
 	this.v =  0;
 	this.w = img.width;
 	this.h = img.height;
-	
+}
+function initBlock(imgs,position) {
+	this.x =  position[0];
+	this.y =  position[1];
+	this.hp =  position[2]||1;
+	this.img = imgs.block;
+	this.w = this.img.width;
+	this.h = this.img.height;
+}
+function initlevels () {
+	var levels = [
+	    [
+	        [0, 0,],
+	    ],
+	    [
+	        [50, 0,],
+	        [100, 100,],
+	    ],
+	    [
+	        [50, 30,],
+	        [100, 100, 2],
+	        [200, 100, 2],
+	    ],
+	]
+	return levels;
 }

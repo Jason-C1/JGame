@@ -1,7 +1,7 @@
 function game(imgs) {
 	main_scene(imgs);
 }
-function load() {
+function loadImg() {
 	var imgPath = {
 		block: 'img/block.png',
 		paddle: 'img/paddle.png',
